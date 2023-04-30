@@ -3,20 +3,30 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WeatherApi", "src\WeatherApi.csproj", "{A31533D3-0D07-4E1F-A236-91ECA38C6916}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WeatherApi", "src\WeatherApi.csproj", "{A31533D3-0D07-4E1F-A236-91ECA38C6916}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "terraform", "terraform", "{302C22EF-1FCF-4802-911C-3A80D15BCAD2}"
+	ProjectSection(SolutionItems) = preProject
+		terraform\main.tf = terraform\main.tf
+		terraform\outputs.tf = terraform\outputs.tf
+		terraform\variables.tf = terraform\variables.tf
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
-	GlobalSection(SolutionProperties) = preSolution
-		HideSolutionNode = FALSE
-	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{A31533D3-0D07-4E1F-A236-91ECA38C6916}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{A31533D3-0D07-4E1F-A236-91ECA38C6916}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A31533D3-0D07-4E1F-A236-91ECA38C6916}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A31533D3-0D07-4E1F-A236-91ECA38C6916}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {DC66FA72-FE0F-47A0-A76E-C41A92FCAC86}
 	EndGlobalSection
 EndGlobal
