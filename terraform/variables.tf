@@ -29,3 +29,7 @@ variable "bucket" {
 variable "health_check_path" {
   type = string
 }
+
+variable "platform" {
+  type = string
+}

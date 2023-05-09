@@ -8,7 +8,7 @@ terraform {
 }
 
 provider "aws"{
-  region = "us-east-2"
+  region  = "us-east-2"
 }
 
 resource "aws_s3_bucket" "bucket" {
@@ -29,7 +29,7 @@ resource "aws_elastic_beanstalk_application" "application" {
 resource "aws_elastic_beanstalk_environment" "environment" {
   name                = "${var.application}-env"
   application         = aws_elastic_beanstalk_application.application.name
-  solution_stack_name = "64bit Amazon Linux 2 v2.5.2 running .NET Core"
+  solution_stack_name = var.platform
   tier                = "WebServer"
 
   setting {
@@ -84,12 +84,6 @@ resource "aws_elastic_beanstalk_environment" "environment" {
     namespace = "aws:elasticbeanstalk:environment"
     name      = "ServiceRole"
     value     = "aws-elasticbeanstalk-service-role"
-  }
-
-  setting {
-    namespace = "aws:elasticbeanstalk:environment:proxy"
-    name      = "ProxyServer"
-    value     = "none"
   }
 
   setting {
