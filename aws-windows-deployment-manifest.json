@@ -5,10 +5,15 @@
         {
             "name": "dotnet-api",
             "parameters": {
-                "appBundle": "site.zip",
-                "iisPath": "/",
-                "iisWebSite": "Default Web Site"
-            }
+              "appBundle": "site.zip",
+              "iisPath": "/",
+              "iisWebSite": "Default Web Site"
+            },
+            "scripts": {
+              "preInstall": {
+                "file": "install.ps1"
+              }
+          }
         }
         ]
     }
