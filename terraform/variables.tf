@@ -33,3 +33,7 @@ variable "health_check_path" {
 variable "platform" {
   type = string
 }
+
+variable "ssl_certificate" {
+  type = string
+}

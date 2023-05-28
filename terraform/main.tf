@@ -171,6 +171,24 @@ resource "aws_elastic_beanstalk_environment" "environment" {
       name      = "HealthCheckPath"
       value     = var.health_check_path
   }
+
+  setting {
+      namespace = "aws:elbv2:listener:443"
+      name      = "Protocol"
+      value     = "HTTPS"
+  }
+
+  setting {
+      namespace = "aws:elbv2:listener:443"
+      name      = "SSLCertificateArns"
+      value     = var.ssl_certificate
+  }
+
+  setting {
+      namespace = "aws:elbv2:listener:443"
+      name      = "SSLPolicy"
+      value     = "ELBSecurityPolicy-2016-08"
+  }
 }
 
 resource "aws_elastic_beanstalk_application_version" "version" {
