@@ -127,7 +127,7 @@ resource "aws_elastic_beanstalk_environment" "environment" {
   setting {
     namespace = "aws:ec2:vpc"
     name      = "ELBScheme"
-    value     = "internet facing"
+    value     = "internal"
   }
 
   setting {
@@ -188,6 +188,18 @@ resource "aws_elastic_beanstalk_environment" "environment" {
       namespace = "aws:elbv2:listener:443"
       name      = "SSLPolicy"
       value     = "ELBSecurityPolicy-2016-08"
+  }
+
+  setting {
+      namespace = "aws:elasticbeanstalk:customoption"
+      name      = "PublicELBSubnets"
+      value     = var.public_elb_subnets
+  }
+
+  setting {
+      namespace = "aws:elasticbeanstalk:customoption"
+      name      = "PublicSSLCertificateArns"
+      value     = var.public_ssl_certificate
   }
 }
 

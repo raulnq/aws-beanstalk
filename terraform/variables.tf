@@ -37,3 +37,11 @@ variable "platform" {
 variable "ssl_certificate" {
   type = string
 }
+
+variable "public_elb_subnets" {
+  type = string
+}
+
+variable "public_ssl_certificate" {
+  type = string
+}
