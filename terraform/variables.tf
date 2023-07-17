@@ -45,3 +45,11 @@ variable "public_elb_subnets" {
 variable "public_ssl_certificate" {
   type = string
 }
+
+variable "nelb_subnetA" {
+  type = string
+}
+
+variable "nelb_ip_subnetA" {
+  type = string
+}

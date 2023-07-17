@@ -201,6 +201,18 @@ resource "aws_elastic_beanstalk_environment" "environment" {
       name      = "PublicSSLCertificateArns"
       value     = var.public_ssl_certificate
   }
+
+  setting {
+      namespace = "aws:elasticbeanstalk:customoption"
+      name      = "NELBbSubnetA"
+      value     = var.nelb_subnetA
+  }
+
+  setting {
+      namespace = "aws:elasticbeanstalk:customoption"
+      name      = "NELBIPSubnetA"
+      value     = var.nelb_ip_subnetA
+  }
 }
 
 resource "aws_elastic_beanstalk_application_version" "version" {
